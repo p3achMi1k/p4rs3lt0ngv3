@@ -107,10 +107,10 @@ function previewText(spell: Spell, sample: string, options: Record<string, unkno
     const out = fn(sample, options);
     if (typeof out !== "string") return "keyed";
     const flat = out.replace(/\s+/g, " ").trim();
-    if (!flat) return "\u2014";
-    return flat.length > 36 ? `${flat.slice(0, 36)}\u2026` : flat;
+    if (!flat) return "—";
+    return flat.length > 36 ? `${flat.slice(0, 36)}…` : flat;
   } catch {
-    return "\u2014";
+    return "—";
   }
 }
 
@@ -290,7 +290,7 @@ function Workbench() {
       }
       const matched = spellById(top.id);
       setOutput(top.text);
-      setMethod(`${top.name} \u00b7 read`);
+      setMethod(`${top.name} · read`);
       setActiveId(top.id);
       if (matched) {
         remember(matched.id);
@@ -537,7 +537,7 @@ function Workbench() {
               className="panel p-3 text-left"
               onClick={() => {
                 setOutput(item.text);
-                setMethod(`${item.name} \u00b7 read`);
+                setMethod(`${item.name} · read`);
                 setActiveId(item.id);
                 const matched = spellById(item.id);
                 if (matched) {
@@ -706,7 +706,7 @@ function SpellGrid({
                 onClick={() => onFavorite(spell.id)}
               >
                 {favorites.includes(spell.id) ? (
-                  <span className="spell-snake" aria-hidden="true">\uD83D\uDC0D</span>
+                  <span className="spell-snake" aria-hidden="true">🐍</span>
                 ) : (
                   <span className="spell-dot" aria-hidden="true" />
                 )}
