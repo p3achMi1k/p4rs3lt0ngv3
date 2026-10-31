@@ -56,7 +56,7 @@ export function DoorIntro() {
         </div>
       )}
       <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-3 p-4">
-        <p className="font-display text-sm tracking-wide text-parchment drop-shadow">P4R53L_ℭᵒ5ᵑeᵒaᵒ2ᵒ9ᵒ2ᵒcᵒb</p>
+        <p className="font-display text-sm tracking-wide text-parchment drop-shadow">P4R53L_ℭ𝔥𝔞𝔪𝔢𝔩𝔢𝔬𝔫</p>
       </div>
       <div className="absolute inset-x-0 bottom-0 flex justify-end p-4">
         <button type="button" className="ghost-btn bg-ink/70" onClick={close}>
